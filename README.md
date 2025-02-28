@@ -71,7 +71,7 @@ Shared arguments between all running files:
 
 ### Running through our model
 
-Run: `src/run_through_model.py`
+Run: `PYTHONPATH=. python src/run_through_model.py`
 
 Args:
 
@@ -103,7 +103,7 @@ write_caches(qg_dists, gg_dists, labels)
 
 ### Running IFCRR
 
-Run `src/rerank.py`
+Run `PYTHONPATH=. python src/rerank.py`
 
 Args:
 
@@ -125,22 +125,22 @@ Args:
 We provide query-gallery (qg) and gallery-gallery (gg) dists as well as some ground truth class labels in `examples` to
 showcase the running of our `rerank.py` file.
 
-`python src/rerank.py --dataset custom --cache_root examples --data_root examples/custom --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples/vis --query_idxs_to_vis 0`
+`PYTHONPATH=. python src/rerank.py --dataset custom --cache_root examples --data_root examples --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples/vis --query_idxs_to_vis 0`
 
 ## Running TuBerlin
 
 ### Get feature distance, either using your own model or ours with:
-`python src/run_through_model.py --dataset tuberlin`
+`PYTHONPATH=. python src/run_through_model.py --dataset tuberlin`
 _Note: check the args listed to change data directories, cache directories etc_
 
 ### Then running ICFRR - with visualisation outputs
-`python src/rerank.py --dataset tuberlin --limited_memory --KG 512 --KQ 512`
+`PYTHONPATH=. python src/rerank.py --dataset tuberlin --limited_memory --KG 512 --KQ 512`
 
 ## Running Sketchy
 
 ### Get feature distance, either using your own model or ours with:
-`python src/run_through_model.py --dataset sketchy_zs2`
+`PYTHONPATH=. python src/run_through_model.py --dataset sketchy_zs2`
 _Note: check the args listed to change data directories, cache directories etc_
 
 ### Then running ICFRR - with visualisation outputs
-`python src/rerank.py --dataset sketchy_zs2 --limited_memory --KG 125 --KQ 100`
+`PYTHONPATH=. python src/rerank.py --dataset sketchy_zs2 --limited_memory --KG 125 --KQ 100`
