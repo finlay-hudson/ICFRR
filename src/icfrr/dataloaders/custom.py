@@ -10,7 +10,7 @@ from src.icfrr.dataloaders.sbir import read_image
 class CustomTestDataset:
     def __init__(self, root_dir: Path | str = 'custom', split: str = "query", transform: Optional[Compose] = None):
         self.root_dir = Path(root_dir) / split
-        self.file_ls = [fn.name for fn in list((self.root_dir).glob("*"))]
+        self.file_ls = sorted([fn.name for fn in list(self.root_dir.glob("*"))])
         self.labels = None
         if (root_dir / "labels.json").exists():
             with open(root_dir / "labels.json") as f:
