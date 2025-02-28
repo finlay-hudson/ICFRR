@@ -7,7 +7,7 @@ from tqdm import tqdm
 from src.icfrr.configs import get_test_args
 from src.icfrr.data_utils import get_datasets, DatasetName
 from src.icfrr.metric_utils import calc_metrics, get_pos_matches
-from src.icfrr.test_utils import Cacher
+from src.icfrr.cache_utils import Cacher
 from src.icfrr.plot_utils import plot_results_over_iterations
 from src.icfrr.vis.visualise_reranks import visualise_ranks_for_queries, save_vis
 

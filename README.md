@@ -95,7 +95,7 @@ You need to generate the features in our cacher format, with these components:
   if no ground truth
 
 ```
-from src.icfrr.test_utils import Cacher
+from src.icfrr.cache_utils import Cacher
 
 cacher = Cacher(<OUT_DIR_PATH>)
 write_caches(qg_dists, gg_dists, labels)
