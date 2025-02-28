@@ -12,7 +12,7 @@ from src.icfrr.models.model_cross import VisionTransformer
 
 
 def load_checkpoint(resume_checkpoint: Path, device: torch.device) -> tuple[dict, RunConfigSettings]:
-    loaded_ckpt = torch.load(resume_checkpoint, map_location=device)
+    loaded_ckpt = torch.load(resume_checkpoint, map_location=device, weights_only=False)
 
     return loaded_ckpt, RunConfigSettings.model_validate(loaded_ckpt["args"])
 
