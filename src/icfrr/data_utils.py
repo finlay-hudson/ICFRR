@@ -6,7 +6,6 @@ from torch.utils.data import DataLoader
 from torchvision.transforms import Compose
 
 from src.icfrr.dataloaders.custom import CustomTestDataset
-from src.icfrr.dataloaders.officeHome import OfficeHomeDataset
 from src.icfrr.dataloaders.sbir import SketchyDataset, TUBerlinDataset
 from src.icfrr.utils import seed_worker
 
