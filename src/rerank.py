@@ -68,6 +68,7 @@ def _handle_permuting(args: Namespace, iter_num: int, top_dists_indices: torch.T
                                    num_per_class=args.per_class)
         vis = visualise_ranks_for_queries(datasets, args.query_idxs_to_vis, top_dists_indices,
                                           args.num_gallery_ims_to_vis)
+        print("Saving visualisation to ", vis_dir / f"reranking_iter_{iter_num}.png")
         save_vis(vis, vis_dir / f"reranking_iter_{iter_num}.png")
 
 
