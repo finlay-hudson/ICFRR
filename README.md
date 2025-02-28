@@ -38,17 +38,24 @@ package:
 pip install timm
 ```
 
-### Datasets 
-Datasets can be downloaded from this [Google Drive link](https://drive.google.com/drive/folders/1eOtrb6b2TH8ljk-usCFOIixlx36HQYz0?usp=sharing)
-The original datasets are licenced with [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the original dataset websites are:
+### Datasets
+
+Datasets can be downloaded from
+this [Google Drive link](https://drive.google.com/drive/folders/1eOtrb6b2TH8ljk-usCFOIixlx36HQYz0?usp=sharing)
+The original datasets are licenced with [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the original
+dataset websites are:
+
 - [TU-Berlin](https://cybertron.cg.tu-berlin.de/eitz/projects/classifysketch/)
-- For Sketchy I could not locate the original page so have linked to [Original Paper](https://dl.acm.org/doi/10.1145/2897824.2925954), [Extended Paper](https://ieeexplore.ieee.org/document/8099730) 
+- For Sketchy I could not locate the original page so have linked
+  to [Original Paper](https://dl.acm.org/doi/10.1145/2897824.2925954), [Extended Paper](https://ieeexplore.ieee.org/document/8099730)
 
 Once download please extract the zip files into your chosen _data_root_
 
-### Pretrained Models 
-We provide the pretrained models described in our [paper](https://arxiv.org/abs/2303.17703). 
-They can be downloaded from this [Google Drive link](https://drive.google.com/drive/folders/1Uu-Y9ew6QVBw8BjJhaH-IgnXRSEUSH7g?usp=sharing)
+### Pretrained Models
+
+We provide the pretrained models described in our [paper](https://arxiv.org/abs/2303.17703).
+They can be downloaded from
+this [Google Drive link](https://drive.google.com/drive/folders/1Uu-Y9ew6QVBw8BjJhaH-IgnXRSEUSH7g?usp=sharing)
 Once downloaded, their root dir should be set as `pretrained_root` (mentioned in arguments below).
 
 ## Running
@@ -66,6 +73,13 @@ Shared arguments between all running files:
 --debug # enable debug mode
 --cache-root # Parent directory to store caches
 ```
+
+## Quickstart - Example Run of ICFRR
+
+We provide query-gallery (qg) and gallery-gallery (gg) dists as well as some ground truth class labels in `examples` to
+showcase the running of our `rerank.py` file.
+
+`PYTHONPATH=. python src/rerank.py --dataset custom --cache_root examples --data_root examples --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples/vis --query_idxs_to_vis 0`
 
 ## Running Model for Feature Distances
 
@@ -120,27 +134,24 @@ Args:
 --num_gallery_ims_to_vis # If visualising with query_idxs_to_vis, how many of the top query-gallery results to see
 ```
 
-## Quickstart - Example Run
-
-We provide query-gallery (qg) and gallery-gallery (gg) dists as well as some ground truth class labels in `examples` to
-showcase the running of our `rerank.py` file.
-
-`PYTHONPATH=. python src/rerank.py --dataset custom --cache_root examples --data_root examples --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples/vis --query_idxs_to_vis 0`
-
 ## Running TuBerlin
 
 ### Get feature distance, either using your own model or ours with:
+
 `PYTHONPATH=. python src/run_through_model.py --dataset tuberlin`
 _Note: check the args listed to change data directories, cache directories etc_
 
 ### Then running ICFRR - with visualisation outputs
+
 `PYTHONPATH=. python src/rerank.py --dataset tuberlin --limited_memory --KG 512 --KQ 512`
 
 ## Running Sketchy
 
 ### Get feature distance, either using your own model or ours with:
+
 `PYTHONPATH=. python src/run_through_model.py --dataset sketchy_zs2`
 _Note: check the args listed to change data directories, cache directories etc_
 
 ### Then running ICFRR - with visualisation outputs
+
 `PYTHONPATH=. python src/rerank.py --dataset sketchy_zs2 --limited_memory --KG 125 --KQ 100`
