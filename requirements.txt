@@ -2,5 +2,7 @@ torch
 torchmetrics
 torchvision
 
+opencv-python
+matplotlib
 pydantic
 tqdm
