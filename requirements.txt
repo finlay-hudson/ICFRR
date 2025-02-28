@@ -1,8 +1,8 @@
-torch
-torchmetrics
-torchvision
+torch==2.5.1
+torchmetrics==1.6.0
+torchvision==0.20.1
 
-opencv-python
-matplotlib
-pydantic
-tqdm
+opencv-python==4.10.0.84
+matplotlib==3.10.0
+pydantic==2.10.4
+tqdm==4.67.1

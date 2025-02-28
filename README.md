@@ -6,7 +6,7 @@ University of York
 
 [Paper](https://arxiv.org/abs/2303.17703) | [Project Page](https://finlay-hudson.github.io/icfrr/)
 
-![skecthy_example.gif](assets/sketchy_example.gif)
+![sketchy_example.gif](assets/sketchy_example.gif)
 
 This repository contains the implementation of Iterative Cluster-free Re-ranking (ICFRR) for refining image retrieval
 results. While it does not include model training code, it supports running ICFRR using either our pretrained models or
@@ -35,7 +35,7 @@ If using your own model, install any additional dependencies. If using our pretr
 package:
 
 ```
-pip install timm
+pip install timm==0.6.11
 ```
 
 ### Datasets
@@ -79,7 +79,7 @@ Shared arguments between all running files:
 We provide query-gallery (qg) and gallery-gallery (gg) dists as well as some ground truth class labels in `examples` to
 showcase the running of our `rerank.py` file.
 
-`PYTHONPATH=. python src/rerank.py --dataset custom --cache_root examples --data_root examples --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples/vis --query_idxs_to_vis 0`
+`PYTHONPATH=. python src/rerank.py --dataset custom --cache_root examples --data_root examples --n_times 20 --KG 10 --KQ 15 --rerank_results_dir examples --query_idxs_to_vis 0`
 
 ## Running Model for Feature Distances
 
