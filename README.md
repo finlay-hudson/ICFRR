@@ -115,7 +115,7 @@ cacher = Cacher(<OUT_DIR_PATH>)
 write_caches(qg_dists, gg_dists, labels)
 ```
 
-### Running IFCRR
+### Running ICFRR
 
 Run `PYTHONPATH=. python src/rerank.py`
 
@@ -155,3 +155,20 @@ _Note: check the args listed to change data directories, cache directories etc_
 ### Then running ICFRR - with visualisation outputs
 
 `PYTHONPATH=. python src/rerank.py --dataset sketchy_zs2 --limited_memory --KG 125 --KQ 100`
+
+## Citation
+
+```bibtex
+@article{hudson2023icfrr,
+  title         = {If At First You Don't Succeed: Test Time Re-ranking for Zero-shot, Cross-domain Retrieval},
+  author        = {Hudson, Finlay G. C. and Smith, William A. P.},
+  journal       = {arXiv preprint arXiv:2303.17703},
+  year          = {2023},
+  eprint        = {2303.17703},
+  archivePrefix = {arXiv}
+}
+```
+
+## License
+
+MIT — see [LICENSE](LICENSE).
